@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Udemy Courses
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+     <ion-card *ngFor="let course of courses" (click)="cardPressed(course)">
+        <img src="{{course.course_image}}" />
+        <ion-card-header>
+          <ion-card-title>{{course.title}}</ion-card-title>
+          
+        </ion-card-header>
+        <ion-card-content>
+          {{course.description}}
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
 </ion-content>
